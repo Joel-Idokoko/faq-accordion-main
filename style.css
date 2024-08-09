@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(292, 42%, 14%);
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    height: 100%;
+    position: relative;
+}
+
+.bg_1 {
+    min-height: 35vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(assets/images/background-pattern-desktop.svg);
+}
+
+.bg_2 {
+    min-height: 65vh;
+    background-color: hsl(0, 100%, 100%);
+}
+
+.FAQ {
+    background-color: hsl(0, 0%, 100%);
+    width: 600px;
+    color: hsl(292, 42%, 14%);
+    min-height: 78vh;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.FAQ .h2 {
+    font-size: 45px;
+    font-weight: 700;
+    padding-top: 65px;
+    margin-left: 50px;
+}
+
+.accordion {
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 10px;
+    width: 100%;
+    max-width: 750px;
+    margin-top: 25px;
+}
+
+.accordion li {
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.accordion li label {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion li label:hover {
+    color: hsl(293, 94%, 66%);
+}
+
+label::after {
+    content: '+';
+    font-size: 25px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+    background-color: hsl(293, 100%, 66%);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.accordion .content {
+    color: hsl(292, 16%, 49%);
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    padding: 0.5s;
+    font-size: 14px;
+}
+
+.accordion input[ type="radio"]:checked+label+.content {
+    max-height: 600px;
+    padding: 20px 20px;
+}
+
+.accordion input[ type="radio"]+label+.content {
+    max-height: 0px;
+}
+
+
+.accordion input[ type="radio"] :checked+label+after {
+    transform: rotate(135eg)
+}
